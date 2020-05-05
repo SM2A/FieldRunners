@@ -36,5 +36,7 @@ bool Missile::shoot(Window* window,std::vector<Enemie*>& deployed,Game* game,Wav
                 }
             }
         }
+        return true;
     }
+    return false;
 }

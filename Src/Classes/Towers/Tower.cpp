@@ -10,6 +10,7 @@ using namespace std;
 #define TOWER_SIZE 60
 #define TILE_SIZE 60
 #define MAX_LVL 3
+#define RANGE_PIC "Res/Towers/range.png"
 
 Tower::Tower(){}
 
@@ -45,6 +46,8 @@ void Tower::draw(){
     string address = pic_address + to_string(lvl) + ".png";
     window->draw_img(address,Rectangle(Point((position.first*TILE_SIZE)+HORIZONTAL_START,
                             (position.second*TILE_SIZE)+VERTICAL_START),TOWER_SIZE,TOWER_SIZE));
+    window->draw_img(RANGE_PIC,Rectangle(Point((position.first*TILE_SIZE)+HORIZONTAL_START-(TILE_SIZE*2),
+                    (position.second*TILE_SIZE)+VERTICAL_START-(TILE_SIZE*2)),2*this->radius,2*this->radius));
 
 }
 
